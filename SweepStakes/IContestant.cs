@@ -16,7 +16,6 @@ namespace SweepStakes
         
         void ContestantEnterEmail();
 
-        int GenerateRegistrationNumber();
     }
 
 }

@@ -26,13 +26,20 @@ namespace SweepStakes
         
         public void GetEntryDescion()
         {
-            Console.WriteLine("Now you know how it works.\n Would you like to enter for a chance to Win? \n");
-            Console.WriteLine("1) Yes, I want to win! \n 2) No, I don't want to win.");
+            Console.WriteLine("Now you know how it works.\nWould you like to enter for a chance to Win?\n");
+            Console.WriteLine("1) Yes, I want to win!\n2) No, I don't want to win.");
             Console.WriteLine("Response:");
             MemberResponse = Console.ReadLine();
         }
-
-       
+        
+        public void PushTheSweepStakesAgain()
+        {
+            Console.WriteLine("Are you sure you don't want to enter the contest?\n It's free to enter...");
+            Console.WriteLine("1) You know what?! I will enter!");
+            Console.WriteLine("2) No, I'm sure I don't want a to enter for a chance to win.");
+            Console.WriteLine("Response:");
+            MemberRepromptResponse = Console.ReadLine();
+        }
 
         public void EnterTheContest(IContestant contestant)
         {
@@ -45,27 +52,8 @@ namespace SweepStakes
                 PushTheSweepStakesAgain();
                 RepromptResults(contestant);
             }
-            else
-            {
-                Console.WriteLine("Sorry, not a vail input. Try again.");
-                Console.ReadLine();
-                EnterTheContest(contestant);
-            }
+            
         }
-
-        public void AssignContestantRegistrationNumber()
-        {
-
-        }
-
-        public void PushTheSweepStakesAgain()
-        {
-            Console.WriteLine("Are you sure you don't want to enter the contest? \n It's free to enter...");
-            Console.WriteLine("1) You know what?! I will enter! \n 2) No, I'm sure I don't want a to enter for a chance to win.");
-            Console.WriteLine("Response:");
-            MemberRepromptResponse = Console.ReadLine();
-        }
-
         public void RepromptResults(IContestant contestant)
         {
             if (MemberRepromptResponse == "1")
@@ -78,13 +66,7 @@ namespace SweepStakes
                 Console.ReadLine();
                 return;
             }
-            else
-            {
-                Console.WriteLine("Sorry, not a vail input. Try again.");
-                Console.ReadLine();
-                PushTheSweepStakesAgain();
-                RepromptResults(contestant);
-            }
+            
         }
     }
 }

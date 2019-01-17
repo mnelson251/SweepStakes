@@ -12,9 +12,8 @@ namespace SweepStakes
         {
 
 
-            Contestant mark = new Contestant();
-            UserInterface ten = new UserInterface();
-            ten.GreetingScreen();
+            MarketingFirm marketing = new MarketingFirm();
+            marketing.Run();
 
 
             

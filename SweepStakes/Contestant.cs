@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class Contestant : IContestant
+    public class Contestant : IContestant
     {
 
         public string FirstName;
         public string LastName;
+        public string FullName;
         public string EmailAddress;
         public int RegistrationNumber; // this needs to auto populate when contestant registers for sweepstakes
 
         public Contestant()
         {
-            GenerateRegistrationNumber();
+           
         }
 
         public void FetchCustomerInfomation() // Encapsulating my methods, keeping it cle
@@ -24,6 +25,7 @@ namespace SweepStakes
             ContestantEnterFirstName();
             ContestantEnterLastName();
             ContestantEnterEmail();
+            ConcatNamesToMakeFullName();
         }
 
         public void ContestantEnterFirstName()
@@ -34,24 +36,21 @@ namespace SweepStakes
 
         public void ContestantEnterLastName()
         {
-            Console.WriteLine("Right on " + FirstName + ". Now, if you could please enter your last name.\n");
+            Console.WriteLine("\nRight on " + FirstName + ". Now, if you could please enter your last name.\n");
             LastName = Console.ReadLine();
         }
 
         public void ContestantEnterEmail()
         {
-            Console.WriteLine("Okay! We have your full name now.\n Could you please enter your email adress, " + FirstName);
+            Console.WriteLine("\nOkay! We have your full name now.\nCould you please enter your email adress, " + FirstName);
             EmailAddress = Console.ReadLine();
         }
-
-        public int GenerateRegistrationNumber() // don't need to return, but need to incriment everytime obj is created
+        
+        public string ConcatNamesToMakeFullName()
         {
-            RegistrationNumber = 000;
-            RegistrationNumber++;
-            return RegistrationNumber;
+            FullName = FirstName + LastName;
+            return FullName;
         }
-
-
 
 
 
