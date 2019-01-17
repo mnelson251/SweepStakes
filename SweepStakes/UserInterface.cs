@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    public class UserInterface
+    public class UserInterface // As a user interface, shouldn't be doing logic, just giving/getting info
     {
         public string MemberResponse;
+        public string MemberRepromptResponse;
 
 
         public void GreetingScreen()
@@ -23,7 +24,7 @@ namespace SweepStakes
            
         }
         
-        public void EnterInformationOption()
+        public void GetEntryDescion()
         {
             Console.WriteLine("Now you know how it works.\n Would you like to enter for a chance to Win? \n");
             Console.WriteLine("1) Yes, I want to win! \n 2) No, I don't want to win.");
@@ -31,12 +32,59 @@ namespace SweepStakes
             MemberResponse = Console.ReadLine();
         }
 
-        public void EnterTheConstest()
+       
+
+        public void EnterTheContest(IContestant contestant)
         {
-            IContestant.FetchCustomerInfomation();
+            if (MemberResponse == "1")
+            {
+                contestant.FetchCustomerInfomation();
+            }
+            else if (MemberResponse == "2")
+            {
+                PushTheSweepStakesAgain();
+                RepromptResults(contestant);
+            }
+            else
+            {
+                Console.WriteLine("Sorry, not a vail input. Try again.");
+                Console.ReadLine();
+                EnterTheContest(contestant);
+            }
         }
 
+        public void AssignContestantRegistrationNumber()
+        {
 
+        }
 
+        public void PushTheSweepStakesAgain()
+        {
+            Console.WriteLine("Are you sure you don't want to enter the contest? \n It's free to enter...");
+            Console.WriteLine("1) You know what?! I will enter! \n 2) No, I'm sure I don't want a to enter for a chance to win.");
+            Console.WriteLine("Response:");
+            MemberRepromptResponse = Console.ReadLine();
+        }
+
+        public void RepromptResults(IContestant contestant)
+        {
+            if (MemberRepromptResponse == "1")
+            {
+                EnterTheContest(contestant);
+            }
+            else if (MemberRepromptResponse == "2")
+            {
+                Console.WriteLine("Sucks to Suck. See ya!");
+                Console.ReadLine();
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Sorry, not a vail input. Try again.");
+                Console.ReadLine();
+                PushTheSweepStakesAgain();
+                RepromptResults(contestant);
+            }
+        }
     }
 }

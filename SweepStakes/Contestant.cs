@@ -19,7 +19,7 @@ namespace SweepStakes
             GenerateRegistrationNumber();
         }
 
-        public void FetchCustomerInfomation()
+        public void FetchCustomerInfomation() // Encapsulating my methods, keeping it cle
         {
             ContestantEnterFirstName();
             ContestantEnterLastName();
@@ -44,7 +44,7 @@ namespace SweepStakes
             EmailAddress = Console.ReadLine();
         }
 
-        public int GenerateRegistrationNumber()
+        public int GenerateRegistrationNumber() // don't need to return, but need to incriment everytime obj is created
         {
             RegistrationNumber = 000;
             RegistrationNumber++;
