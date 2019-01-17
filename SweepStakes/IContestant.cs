@@ -8,14 +8,15 @@ namespace SweepStakes
 {
     public interface IContestant
     {
+        void FetchCustomerInfomation();
+
+        void ContestantEnterFirstName();
+
+        void ContestantEnterLastName();
         
-        void CaptureContestantFirstName();
+        void ContestantEnterEmail();
 
-        void CaptureContestantLastName();
-        
-        void CaptureContestantEmail();
-
-
+        int GenerateRegistrationNumber();
 
     }
 

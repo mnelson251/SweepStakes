@@ -16,26 +16,41 @@ namespace SweepStakes
 
         public Contestant()
         {
-
+            GenerateRegistrationNumber();
         }
 
-        public void CaptureContestantFirstName()
+        public void FetchCustomerInfomation()
         {
-
+            ContestantEnterFirstName();
+            ContestantEnterLastName();
+            ContestantEnterEmail();
         }
 
-        public void CaptureContestantLastName()
+        public void ContestantEnterFirstName()
         {
-
+            Console.WriteLine("Please enter your first name.\n");
+            FirstName = Console.ReadLine();
         }
 
-        public void CaptureContestantEmail()
+        public void ContestantEnterLastName()
         {
-
+            Console.WriteLine("Right on " + FirstName + ". Now, if you could please enter your last name.\n");
+            LastName = Console.ReadLine();
         }
 
+        public void ContestantEnterEmail()
+        {
+            Console.WriteLine("Okay! We have your full name now.\n Could you please enter your email adress, " + FirstName);
+            EmailAddress = Console.ReadLine();
+        }
 
-        
+        public int GenerateRegistrationNumber()
+        {
+            RegistrationNumber = 000;
+            RegistrationNumber++;
+            return RegistrationNumber;
+        }
+
 
 
 

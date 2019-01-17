@@ -12,9 +12,12 @@ namespace SweepStakes
         {
 
 
+            Contestant mark = new Contestant();
+            UserInterface ten = new UserInterface();
+            ten.GreetingScreen();
 
 
-
+            
 
 
         }
