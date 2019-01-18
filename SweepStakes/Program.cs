@@ -11,12 +11,14 @@ namespace SweepStakes
         static void Main(string[] args)
         {
 
+            SweepstakesStackManager sweepstakesStackManager = new SweepstakesStackManager();
+            SweepstakesQueueManager sweepstakesQueueManager = new SweepstakesQueueManager();
+            MarketingFirm marketing = new MarketingFirm(sweepstakesQueueManager);
+            marketing.RunSweepStakes();
 
-            MarketingFirm marketing = new MarketingFirm();
-            marketing.Run();
+            //string SweepStakesWinner = SweepStakes.PickWinner();
+            //SweepStakes.PrintContestantInfomation(SweepStakes.value);
 
-
-            
 
 
         }

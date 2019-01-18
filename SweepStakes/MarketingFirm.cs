@@ -6,35 +6,26 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    public class MarketingFirm : ISweepStakesManager
+    public class MarketingFirm
     {
 
         public string name;
         public SweepStakes SweepStakes;
-        
+        public ISweepStakesManager manager;
         public UserInterface mainMenu;
 
-        public MarketingFirm()
+        public MarketingFirm(ISweepStakesManager mySweepStakesManager )
         {
-
+            this.manager = mySweepStakesManager;
         }
 
-        public void Run()
+        public void RunSweepStakes()
         {
             GetSweepStakes();
             mainMenu = new UserInterface();
-            SweepStakes.RunThisSweepStakes( mainMenu);
+            SweepStakes.RunThisSweepStakes(mainMenu);
             mainMenu._contestant.RegistrationNumber = SweepStakes._RegistrationNumber;
-            SweepStakes.RegisterContestant(mainMenu._contestant);
-
-            //string SweepStakesWinner = SweepStakes.PickWinner();
-            //SweepStakes.PrintContestantInfomation(SweepStakes.value);
-            
-        }
-
-        public void InsertSweepStakes(SweepStakes SweepStakes)
-        {
-
+            SweepStakes.RegisterContestant(mainMenu._contestant); 
         }
 
         public SweepStakes GetSweepStakes()
