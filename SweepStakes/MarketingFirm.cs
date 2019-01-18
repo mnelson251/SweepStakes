@@ -11,7 +11,7 @@ namespace SweepStakes
 
         public string name;
         public SweepStakes SweepStakes;
-        public Contestant contestant;
+        
         public UserInterface mainMenu;
 
         public MarketingFirm()
@@ -22,14 +22,10 @@ namespace SweepStakes
         public void Run()
         {
             GetSweepStakes();
-            contestant = new Contestant();
             mainMenu = new UserInterface();
-            contestant.RegistrationNumber = SweepStakes._RegistrationNumber;
-            SweepStakes.RunThisSweepStakes( mainMenu, contestant);
-            SweepStakes.RegisterContestant(contestant);
-
-
-
+            mainMenu._contestant.RegistrationNumber = SweepStakes._RegistrationNumber;
+            SweepStakes.RunThisSweepStakes( mainMenu, mainMenu._contestant);
+            SweepStakes.RegisterContestant(mainMenu._contestant);
         }
 
         public void InsertSweepStakes(SweepStakes SweepStakes)

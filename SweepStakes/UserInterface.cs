@@ -10,6 +10,7 @@ namespace SweepStakes
     {
         public string MemberResponse;
         public string MemberRepromptResponse;
+        public Contestant _contestant;
 
 
         public void GreetingScreen()
@@ -41,24 +42,27 @@ namespace SweepStakes
             MemberRepromptResponse = Console.ReadLine();
         }
 
-        public void EnterTheContest(IContestant contestant)
+        public void EnterTheContest()
         {
+            _contestant = new Contestant();
+
             if (MemberResponse == "1")
             {
-                contestant.FetchCustomerInfomation();
+                _contestant.FetchContestantInfomation();
             }
             else if (MemberResponse == "2")
             {
                 PushTheSweepStakesAgain();
-                RepromptResults(contestant);
+                RepromptResults();
             }
             
         }
-        public void RepromptResults(IContestant contestant)
+
+        public void RepromptResults()
         {
             if (MemberRepromptResponse == "1")
             {
-                EnterTheContest(contestant);
+                EnterTheContest();
             }
             else if (MemberRepromptResponse == "2")
             {

@@ -12,9 +12,10 @@ namespace SweepStakes
         public string sweepStakesName;
         public int _RegistrationNumber;
         public int GeneratedRegistrationNumber = 000;
-       
-        Dictionary<int, string> RegisteredContestantsDictionary = new Dictionary<int, string>();
-        UserInterface MainMenu = new UserInterface();
+        
+        Dictionary<int, Contestant> RegisteredContestantsDictionary = new Dictionary<int, Contestant>();
+        readonly UserInterface MainMenu = new UserInterface();
+
 
         public SweepStakes(string sweepStakesName)
         {
@@ -35,7 +36,7 @@ namespace SweepStakes
             GenerateRegistrationNumber();
             mainMenu.GreetingScreen();
             mainMenu.GetEntryDescion();
-            mainMenu.EnterTheContest(contestant);
+            mainMenu.EnterTheContest();
         }
 
 
@@ -49,7 +50,7 @@ namespace SweepStakes
         public void RegisterContestant (Contestant contestant) // where this is called, must create contestant obj
         {
             contestant.RegistrationNumber = _RegistrationNumber; // RegNum generated in this class
-            RegisteredContestantsDictionary.Add(contestant.RegistrationNumber, contestant.FullName);
+            RegisteredContestantsDictionary.Add(contestant.RegistrationNumber, contestant);
         }
 
         //public string PickWinner()

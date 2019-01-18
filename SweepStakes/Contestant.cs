@@ -20,12 +20,13 @@ namespace SweepStakes
            
         }
 
-        public void FetchCustomerInfomation() // Encapsulating my methods, keeping it cle
+        public void FetchContestantInfomation() // Encapsulating my methods, keeping it cle
         {
             ContestantEnterFirstName();
             ContestantEnterLastName();
             ContestantEnterEmail();
             ConcatNamesToMakeFullName();
+
         }
 
         public void ContestantEnterFirstName()
