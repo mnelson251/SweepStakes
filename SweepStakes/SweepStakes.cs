@@ -13,7 +13,7 @@ namespace SweepStakes
         public int _RegistrationNumber;
         public int GeneratedRegistrationNumber = 000;
         public Contestant value;
-        public Contestant contestant;
+        public Contestant contestant = new Contestant();
         Dictionary<int, Contestant> sSDictionary = new Dictionary<int, Contestant>();
         
 
@@ -64,11 +64,11 @@ namespace SweepStakes
             return Winner;
         }
 
-        public void PrintContestantInfomation(Contestant contestant)
-        {
+        public void PrintContestantInfomation()
+        { // not an instance of an object 
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(contestant.FullName);
-            sb.AppendLine(contestant.EmailAddress);
+            sb.AppendLine(value.FullName);
+            sb.AppendLine(value.EmailAddress);
             Console.WriteLine(sb);
             Console.ReadLine();
            

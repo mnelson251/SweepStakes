@@ -59,10 +59,12 @@ namespace SweepStakes
             if (MarketingResponse == "yes")
             {
                 SweepStakes.PickWinner();
+                Console.Clear();
             }
             else if (MarketingResponse == "no")
             {
                 NumberOfContestants();
+                Console.Clear();
                 return; // don't want to get caught in a loop type sitch 
             }
             else
@@ -79,7 +81,8 @@ namespace SweepStakes
             PrintResponse = Console.ReadLine().ToLower();
             if (PrintResponse == "yes")
             {
-                sweepstakes.PrintContestantInfomation(sweepstakes.contestant);
+                sweepstakes.PrintContestantInfomation();
+                Console.Clear();
             }
             else
             {

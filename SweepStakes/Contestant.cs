@@ -31,13 +31,13 @@ namespace SweepStakes
 
         public void ContestantEnterFirstName()
         {
-            Console.WriteLine("Please enter your first name.\n");
+            Console.WriteLine("Please enter your first name.");
             FirstName = Console.ReadLine();
         }
 
         public void ContestantEnterLastName()
         {
-            Console.WriteLine("\nRight on " + FirstName + ". Now, if you could please enter your last name.\n");
+            Console.WriteLine("\nRight on " + FirstName + ". Now, if you could please enter your last name.");
             LastName = Console.ReadLine();
         }
 
@@ -45,11 +45,12 @@ namespace SweepStakes
         {
             Console.WriteLine("\nOkay! We have your full name now.\nCould you please enter your email adress, " + FirstName);
             EmailAddress = Console.ReadLine();
+            Console.Clear();
         }
         
         public string ConcatNamesToMakeFullName()
         {
-            FullName = FirstName + LastName;
+            FullName = FirstName + " " + LastName;
             return FullName;
         }
 

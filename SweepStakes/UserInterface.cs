@@ -71,9 +71,5 @@ namespace SweepStakes
                 return;
             } 
         }
-
-
-
-
     }
 }
