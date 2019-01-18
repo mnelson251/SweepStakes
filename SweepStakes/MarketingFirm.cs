@@ -17,6 +17,7 @@ namespace SweepStakes
         public MarketingFirm(ISweepStakesManager mySweepStakesManager )
         {
             this.manager = mySweepStakesManager;
+            RunSweepStakes();
         }
 
         public void RunSweepStakes()

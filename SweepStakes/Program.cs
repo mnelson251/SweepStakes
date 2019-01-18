@@ -11,16 +11,9 @@ namespace SweepStakes
         static void Main(string[] args)
         {
 
-            SweepstakesStackManager sweepstakesStackManager = new SweepstakesStackManager();
-            SweepstakesQueueManager sweepstakesQueueManager = new SweepstakesQueueManager();
-            MarketingFirm marketing = new MarketingFirm(sweepstakesQueueManager);
-            marketing.RunSweepStakes();
+            SubProgram subProgram = new SubProgram();
 
-            //string SweepStakesWinner = SweepStakes.PickWinner();
-            //SweepStakes.PrintContestantInfomation(SweepStakes.value);
-
-
-
+            
         }
     }
 }
