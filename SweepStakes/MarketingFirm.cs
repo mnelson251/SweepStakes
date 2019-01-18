@@ -23,9 +23,13 @@ namespace SweepStakes
         {
             GetSweepStakes();
             mainMenu = new UserInterface();
+            SweepStakes.RunThisSweepStakes( mainMenu);
             mainMenu._contestant.RegistrationNumber = SweepStakes._RegistrationNumber;
-            SweepStakes.RunThisSweepStakes( mainMenu, mainMenu._contestant);
             SweepStakes.RegisterContestant(mainMenu._contestant);
+
+            //string SweepStakesWinner = SweepStakes.PickWinner();
+            //SweepStakes.PrintContestantInfomation(SweepStakes.value);
+            
         }
 
         public void InsertSweepStakes(SweepStakes SweepStakes)

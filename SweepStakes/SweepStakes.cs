@@ -12,8 +12,8 @@ namespace SweepStakes
         public string sweepStakesName;
         public int _RegistrationNumber;
         public int GeneratedRegistrationNumber = 000;
-        
-        Dictionary<int, Contestant> RegisteredContestantsDictionary = new Dictionary<int, Contestant>();
+        public Contestant value;
+        Dictionary<int, Contestant> sSDictionary = new Dictionary<int, Contestant>();
         readonly UserInterface MainMenu = new UserInterface();
 
 
@@ -23,15 +23,14 @@ namespace SweepStakes
             this.sweepStakesName = sweepStakesName;   
         }
 
-        public string NameThisSweepStakes()
+        public void NameThisSweepStakes()
         {
             Console.WriteLine("Please name this SweepStakes.");
             sweepStakesName = Console.ReadLine();
             Console.Clear();
-            return sweepStakesName;
         }
 
-        public void RunThisSweepStakes(UserInterface mainMenu, Contestant contestant)
+        public void RunThisSweepStakes(UserInterface mainMenu)
         {
             GenerateRegistrationNumber();
             mainMenu.GreetingScreen();
@@ -50,19 +49,27 @@ namespace SweepStakes
         public void RegisterContestant (Contestant contestant) // where this is called, must create contestant obj
         {
             contestant.RegistrationNumber = _RegistrationNumber; // RegNum generated in this class
-            RegisteredContestantsDictionary.Add(contestant.RegistrationNumber, contestant);
+            sSDictionary.Add(contestant.RegistrationNumber, contestant);
         }
 
-        //public string PickWinner()
-        //{
-        //    string Winner;
-            
-        //    return Winner;
-        //}
+        public string PickWinner()
+        {
+            int RandomWinnerKey;
+            string Winner;
+            Random rnd = new Random();
+            RandomWinnerKey = rnd.Next(sSDictionary.Keys.Min(), sSDictionary.Keys.Max());
+            value = sSDictionary[RandomWinnerKey];
+            Winner = value.FullName;
+            return Winner;
+        }
 
-        public void PrintContestantInfomation(Contestant contestant, Dictionary<int, string> RegisteredContestantDictionary) // create 
-        { // create a switch statment that access the dictionary (through built-in properties) and print final value to console
-           
+        public void PrintContestantInfomation(Contestant contestant)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(contestant.FullName);
+            sb.AppendLine(contestant.EmailAddress);
+            Console.WriteLine(sb);
+            Console.ReadLine();
            
         }
 
