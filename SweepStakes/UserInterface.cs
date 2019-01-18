@@ -13,16 +13,15 @@ namespace SweepStakes
         public Contestant _contestant;
 
 
-        public void GreetingScreen()
+        public void GreetingScreen(SweepStakes SweepStakes)
         {
-            Console.WriteLine("Welcome to devCodeCamp SweepStakes! \n");
+            Console.WriteLine("Welcome to " + SweepStakes.sweepStakesName + " SweepStakes! \n");
             Console.WriteLine("We appreciate our members! That’s why we are offering you this \n" +
                 "opportunity to enter for a chance to win! Once you give us your contact details, \n" +
                 "we give you a number. After a few people have entered, and a little time goes by, we \n" +
                 "will draw a number to determine the winner of the SweepStakes. Good luck, and thank \n" +
                 "you for being a valued part of our family!\n");
             Console.ReadLine();
-           
         }
         
         public void GetEntryDescion()
@@ -31,6 +30,7 @@ namespace SweepStakes
             Console.WriteLine("1) Yes, I want to win!\n2) No, I don't want to win.");
             Console.WriteLine("Response:");
             MemberResponse = Console.ReadLine();
+            Console.Clear();
         }
         
         public void PushTheSweepStakesAgain()
@@ -40,6 +40,7 @@ namespace SweepStakes
             Console.WriteLine("2) No, I'm sure I don't want a to enter for a chance to win.");
             Console.WriteLine("Response:");
             MemberRepromptResponse = Console.ReadLine();
+            Console.Clear();
         }
 
         public void EnterTheContest()
@@ -55,7 +56,6 @@ namespace SweepStakes
                 PushTheSweepStakesAgain();
                 RepromptResults();
             }
-            
         }
 
         public void RepromptResults()
@@ -69,8 +69,11 @@ namespace SweepStakes
                 Console.WriteLine("Sucks to Suck. See ya!");
                 Console.ReadLine();
                 return;
-            }
-            
+            } 
         }
+
+
+
+
     }
 }

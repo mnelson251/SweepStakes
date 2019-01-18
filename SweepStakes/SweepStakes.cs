@@ -13,14 +13,15 @@ namespace SweepStakes
         public int _RegistrationNumber;
         public int GeneratedRegistrationNumber = 000;
         public Contestant value;
+        public Contestant contestant;
         Dictionary<int, Contestant> sSDictionary = new Dictionary<int, Contestant>();
-        readonly UserInterface MainMenu = new UserInterface();
+        
 
 
         public SweepStakes(string sweepStakesName)
         {
             NameThisSweepStakes();
-            this.sweepStakesName = sweepStakesName;   
+            sweepStakesName = this.sweepStakesName;   
         }
 
         public void NameThisSweepStakes()
@@ -30,10 +31,10 @@ namespace SweepStakes
             Console.Clear();
         }
 
-        public void RunThisSweepStakes(UserInterface mainMenu)
+        public void RunThisSweepStakes(UserInterface mainMenu, SweepStakes sweep)
         {
             GenerateRegistrationNumber();
-            mainMenu.GreetingScreen();
+            mainMenu.GreetingScreen(sweep);
             mainMenu.GetEntryDescion();
             mainMenu.EnterTheContest();
         }
