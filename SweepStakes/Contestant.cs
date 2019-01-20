@@ -8,7 +8,6 @@ namespace SweepStakes
 {
     public class Contestant
     {
-
         public string FirstName;
         public string LastName;
         public string FullName;
@@ -52,14 +51,6 @@ namespace SweepStakes
             FullName = FirstName + " " + LastName;
             return FullName;
         }
-
-
-
-
-
-
-
-
-
+        
     }
 }

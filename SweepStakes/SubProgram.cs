@@ -8,12 +8,10 @@ namespace SweepStakes
 {
     class SubProgram
     {
-
         SweepstakesStackManager Stack_Type = new SweepstakesStackManager();
         SweepstakesQueueManager Queue_Type = new SweepstakesQueueManager();
         public MarketingFirm marketing;
         
-
         public SubProgram()
         {
            
@@ -47,10 +45,5 @@ namespace SweepStakes
             }
         }
        
-
-
-
-
-
     }
 }

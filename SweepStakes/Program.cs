@@ -10,11 +10,9 @@ namespace SweepStakes
     {
         static void Main(string[] args)
         {
-
             SubProgram subProgram = new SubProgram();
             subProgram.SelectManagerType();
             subProgram.marketing.RunSweepStakes();
-
         }
     }
 }

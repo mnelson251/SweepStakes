@@ -11,8 +11,7 @@ namespace SweepStakes
         public string MemberResponse;
         public string MemberRepromptResponse;
         public Contestant _contestant;
-
-
+        
         public void GreetingScreen(SweepStakes SweepStakes)
         {
             Console.WriteLine("Welcome to " + SweepStakes.sweepStakesName + " SweepStakes! \n");
@@ -33,7 +32,6 @@ namespace SweepStakes
             Console.Clear();
         }
         
-
         public void EnterTheContest()
         {
             _contestant = new Contestant();
@@ -48,6 +46,5 @@ namespace SweepStakes
             }
         }
 
-      
     }
 }

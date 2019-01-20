@@ -8,7 +8,6 @@ namespace SweepStakes
 {
     public class SweepStakes
     {
-        
         public string sweepStakesName;
         public int _RegistrationNumber;
         public int GeneratedRegistrationNumber = 000;
@@ -16,8 +15,6 @@ namespace SweepStakes
         public Contestant contestant = new Contestant();
         Dictionary<int, Contestant> sSDictionary = new Dictionary<int, Contestant>();
         
-
-
         public SweepStakes(string sweepStakesName)
         {
             NameThisSweepStakes();
@@ -38,8 +35,7 @@ namespace SweepStakes
             mainMenu.GetEntryDescion();
             mainMenu.EnterTheContest();
         }
-
-
+        
         public void GenerateRegistrationNumber() // don't need to return, but need to incriment everytime obj is created
         {
             GeneratedRegistrationNumber++;
@@ -71,12 +67,7 @@ namespace SweepStakes
             Console.WriteLine("The Winner is:\n");
             Console.WriteLine(sb);
             Console.ReadLine();
-           
         }
-
         
-
-
-
     }
 }

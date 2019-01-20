@@ -8,7 +8,6 @@ namespace SweepStakes
 {
     public class MarketingFirm
     {
-
         public string name;
         public SweepStakes SweepStakes;
         public ISweepStakesManager manager;
@@ -20,7 +19,6 @@ namespace SweepStakes
         public MarketingFirm(ISweepStakesManager mySweepStakesManager )
         {
             this.manager = mySweepStakesManager;
-            //RunSweepStakes();
         }
 
         public void RunSweepStakes()
