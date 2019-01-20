@@ -33,15 +33,6 @@ namespace SweepStakes
             Console.Clear();
         }
         
-        public void PushTheSweepStakesAgain()
-        {
-            Console.WriteLine("Are you sure you don't want to enter the contest?\n It's free to enter...");
-            Console.WriteLine("1) You know what?! I will enter!");
-            Console.WriteLine("2) No, I'm sure I don't want a to enter for a chance to win.");
-            Console.WriteLine("Response:");
-            MemberRepromptResponse = Console.ReadLine();
-            Console.Clear();
-        }
 
         public void EnterTheContest()
         {
@@ -53,23 +44,10 @@ namespace SweepStakes
             }
             else if (MemberResponse == "2")
             {
-                PushTheSweepStakesAgain();
-                RepromptResults();
+                // put something here as a response
             }
         }
 
-        public void RepromptResults()
-        {
-            if (MemberRepromptResponse == "1")
-            {
-                EnterTheContest();
-            }
-            else if (MemberRepromptResponse == "2")
-            {
-                Console.WriteLine("Sucks to Suck. See ya!");
-                Console.ReadLine();
-                return;
-            } 
-        }
+      
     }
 }

@@ -12,8 +12,9 @@ namespace SweepStakes
         {
 
             SubProgram subProgram = new SubProgram();
+            subProgram.SelectManagerType();
+            subProgram.marketing.RunSweepStakes();
 
-            
         }
     }
 }

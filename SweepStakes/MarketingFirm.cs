@@ -20,7 +20,7 @@ namespace SweepStakes
         public MarketingFirm(ISweepStakesManager mySweepStakesManager )
         {
             this.manager = mySweepStakesManager;
-            RunSweepStakes();
+            //RunSweepStakes();
         }
 
         public void RunSweepStakes()
@@ -30,6 +30,7 @@ namespace SweepStakes
             NumberOfContestants();
             for (int i = 0; i < NumberOfContestantsToLoop; i++) // need more than one to pick winner
             {
+                Console.WriteLine("Contestant Number " + (i +1));
                 SweepStakes.RunThisSweepStakes(mainMenu, SweepStakes);
                 SweepStakes.RegisterContestant(mainMenu._contestant);
             }
@@ -63,9 +64,10 @@ namespace SweepStakes
             }
             else if (MarketingResponse == "no")
             {
-                NumberOfContestants();
+                Console.WriteLine("Pick a winner already");
+                Console.ReadLine();
                 Console.Clear();
-                return; // don't want to get caught in a loop type sitch 
+                TimeToChooseAWinner(SweepStakes);
             }
             else
             {
@@ -82,6 +84,7 @@ namespace SweepStakes
             if (PrintResponse == "yes")
             {
                 sweepstakes.PrintContestantInfomation();
+                Console.ReadLine();
                 Console.Clear();
             }
             else

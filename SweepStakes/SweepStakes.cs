@@ -45,7 +45,6 @@ namespace SweepStakes
             GeneratedRegistrationNumber++;
             _RegistrationNumber = GeneratedRegistrationNumber;
         }
-
         
         public void RegisterContestant (Contestant contestant) // where this is called, must create contestant obj
         {
@@ -65,10 +64,11 @@ namespace SweepStakes
         }
 
         public void PrintContestantInfomation()
-        { // not an instance of an object 
+        { 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(value.FullName);
             sb.AppendLine(value.EmailAddress);
+            Console.WriteLine("The Winner is:\n");
             Console.WriteLine(sb);
             Console.ReadLine();
            

@@ -26,7 +26,6 @@ namespace SweepStakes
             ContestantEnterLastName();
             ContestantEnterEmail();
             ConcatNamesToMakeFullName();
-
         }
 
         public void ContestantEnterFirstName()
