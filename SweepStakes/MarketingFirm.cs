@@ -15,6 +15,7 @@ namespace SweepStakes
         public int NumberOfContestantsToLoop;
         public string MarketingResponse;
         public string PrintResponse;
+        public string MarketingRepromtResponse;
 
         public MarketingFirm(ISweepStakesManager mySweepStakesManager )
         {
@@ -34,6 +35,7 @@ namespace SweepStakes
             }
             TimeToChooseAWinner(SweepStakes);
             ChooseToPrintInfomation(SweepStakes);
+            RepromptSweepStakes();
         }
 
         public SweepStakes GetSweepStakes()
@@ -93,6 +95,37 @@ namespace SweepStakes
             }
 
         }
+
+        public void RepromptSweepStakes()
+        {
+            here:
+            Console.WriteLine("Would you like to run another SweepStakes?");
+            Console.WriteLine("1) YES\n2) NO\n");
+            MarketingRepromtResponse = Console.ReadLine().ToLower();
+            
+            if (MarketingRepromtResponse == "1")
+            {
+                manager.InsertSweepStakes(SweepStakes);
+                Console.Clear();
+                SubProgram subProgram = new SubProgram();
+                subProgram.SelectManagerType();
+                subProgram.marketing.RunSweepStakes();
+            }
+            else if(MarketingRepromtResponse == "2")
+            {
+                Console.Clear();
+                Console.WriteLine("Okay, have a nice day!");
+                Console.ReadLine();
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Invalid Entry. Please try again");
+                Console.ReadLine();
+                goto here;
+            }
+        }
+
 
     }
 }
